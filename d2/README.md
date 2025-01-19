@@ -1,4 +1,3 @@
-
 # Advent of Code
 
 ## --- Day 2: Red-Nosed Reports ---

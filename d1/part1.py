@@ -1,5 +1,5 @@
-
-
+# calcular la diferencia de los mínimos en cada columna del input y sumarla
+# usar el contenido en sample de referencia, en este caso, es 1-3, 2-3, 3-3, 3-4, 3-5, 4-9
 #sample="""3   4
 #4   3
 #2   5
@@ -15,25 +15,16 @@ with open('input', 'r') as inputF:
 left_col  = []
 right_col = []
 
-#añadimos cada lado de la columna a su respactiva lista
+# separar la lista en ambas columnas
 for a in location_IDs:
     left_col.append(int(a.split(   )[0]))
     right_col.append(int(a.split(   )[-1]))
 
-counter=0
-full_result=0
+result=0
 
-#con un bucle while, pillamos en cada iteracion el mínimo
-#de cada lista, lo eliminamos de esta, y hacemos la operación
-#hasta que no quedan números
-while counter < len(left_col):
-    r=min(right_col)
-    l=min(left_col)
-    left_col.remove(l)
-    right_col.remove(r)
-    result = l-r
-    full_result+=abs(result)
-print(full_result)
-
-
-
+# diferencia de los minimos en cada columna en cada iteracion
+while len(left_col)>0:
+    l=left_col.pop(left_col.index(min(left_col)))
+    r=right_col.pop(right_col.index(min(right_col)))
+    result+=abs(r-l)
+print(result)

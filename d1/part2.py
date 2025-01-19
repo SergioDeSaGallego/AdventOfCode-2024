@@ -1,5 +1,6 @@
-import os
-import sys
+# el mismo imput que parte 1
+# ahora, hay que calcular cuantas veces cada numero de la izquierda aparece en la columna derecha, multiplicar ese numero por las veces que aparezca, y sumar el resultado
+# en este caso, 3x3+4x1+2x0+1x0+3x3+3x3=31
 
 #sample="""3   4
 #4   3
@@ -23,8 +24,7 @@ for a in location_IDs:
 counter=0
 full_result=0
 
-#aquí con otro bucle while, apuntamos en cada iteracion
-#cuantas veces se repite el numero 
+#apuntar en cada iteracion cuantas veces se repite el numero y hacer la suma
 while counter < len(right_col):
     l=left_col[counter]
     score=0
